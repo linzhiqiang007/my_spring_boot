@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.community.services.mapper.provinces.ProvincesMapper" >
+    <select id="provincesList" resultType="com.community.services.pojo.provinces.Provinces">
+        select * from provinces;
+    </select>
+</mapper>

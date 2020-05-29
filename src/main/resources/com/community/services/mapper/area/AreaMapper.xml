@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.community.services.mapper.area.AreaMapper">
+
+    <select id="AreaList" resultType="com.community.services.pojo.area.Area">
+         select * from area;
+    </select>
+
+    <select id="AreaListByCityCode" parameterType="java.lang.String" resultType="com.community.services.pojo.area.Area">
+        select * from area where city_code = #{city_code};
+    </select>
+
+</mapper>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.community.services.mapper.orders.OrdersMapper" >
+    <insert id="SaveOrder" parameterType="com.community.services.pojo.orders.Orders">
+        insert into community_orders
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="plat_oid != null">
+                plat_oid,
+            </if>
+            <if test="user_id != null">
+                user_id,
+            </if>
+            <if test="product_id != null">
+                product_id,
+            </if>
+            <if test="buy_cnt != null">
+                buy_cnt,
+            </if>
+            <if test="trade_no != null">
+                trade_no,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="real_price != null">
+                real_price,
+            </if>
+            <if test="pay_type != null">
+                pay_type,
+            </if>
+            <if test="pay_amount != null">
+                pay_amount,
+            </if>
+            <if test="pay_state != null">
+                pay_state,
+            </if>
+            <if test="order_state != null">
+                order_state,
+            </if>
+            <if test="addr != null">
+                addr,
+            </if>
+            <if test="NAME != null">
+                NAME,
+            </if>
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="msg != null">
+                msg,
+            </if>
+            <if test="extra != null">
+                extra,
+            </if>
+            <if test="create_time != null">
+                create_time,
+            </if>
+            <if test="end_time != null">
+                end_time,
+            </if>
+            <if test="pay_time != null">
+                pay_time,
+            </if>
+            <if test="shop_num != null">
+                shop_num,
+            </if>
+            <if test="only_order != null">
+                only_order,
+            </if>
+            <if test="mark != null">
+                mark,
+            </if>
+            <if test="pcids != null">
+                pcids,
+            </if>
+            <if test="sales_shop != null">
+                sales_shop,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="plat_oid != null">
+                #{plat_oid},
+            </if>
+            <if test="user_id != null">
+                #{user_id},
+            </if>
+            <if test="product_id != null">
+                #{product_id},
+            </if>
+            <if test="buy_cnt != null">
+                #{buy_cnt},
+            </if>
+            <if test="trade_no != null">
+                #{trade_no},
+            </if>
+            <if test="price != null">
+                #{price},
+            </if>
+            <if test="real_price != null">
+                #{real_price},
+            </if>
+            <if test="pay_type != null">
+                #{pay_type},
+            </if>
+            <if test="pay_amount != null">
+                #{pay_amount},
+            </if>
+            <if test="pay_state != null">
+                #{pay_state},
+            </if>
+            <if test="order_state != null">
+                #{order_state},
+            </if>
+            <if test="addr != null">
+                #{addr},
+            </if>
+            <if test="NAME != null">
+                #{NAME},
+            </if>
+            <if test="phone != null">
+                #{phone},
+            </if>
+            <if test="msg != null">
+                #{msg},
+            </if>
+            <if test="extra != null">
+                #{extra},
+            </if>
+            <if test="create_time != null">
+                #{create_time},
+            </if>
+            <if test="end_time != null">
+                #{end_time},
+            </if>
+            <if test="pay_time != null">
+                #{pay_time},
+            </if>
+            <if test="shop_num != null">
+                #{shop_num},
+            </if>
+            <if test="only_order != null">
+                #{only_order},
+            </if>
+            <if test="mark != null">
+                #{mark},
+            </if>
+            <if test="pcids != null">
+                #{pcids},
+            </if>
+            <if test="sales_shop != null">
+                #{sales_shop},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="findOrderById" resultType="com.community.services.pojo.orders.Orders" parameterType="java.lang.Integer">
+        select * from community_orders where id = #{id};
+    </select>
+
+    <update id="updateStatusByOrderId" parameterType="com.community.services.pojo.orders.Orders">
+        update community_orders set order_state = #{order_state} where id = #{id};
+    </update>
+</mapper>
